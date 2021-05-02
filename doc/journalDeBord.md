@@ -9,3 +9,31 @@
 - Création des wireframes
 
 -> Choix de faire des wireframes pour desktop seulement (vu que l'application sert à améliorer la frappe au clavier), wireframes pour mobile pour certaine page (login, sign in) pour pouvoir s'inscrire, se connecter => PAS POUR LA PAGE JEU
+
+# Jour 2 : le 02/05/2021
+
+### Choix (technologies, charte graphique)
+
+Dans un premier temps, utilisation de Node Js, Express Js, PostgreSQL et SQL pour la partie back du projet.
+Mise en place d'un serveur simple avec Express Js (Renvoie bonjour pour l'instant)
+Mise en place de l'architecture du code (Création des dossiers (views, statique, app, etc)).
+Recherche charte graphique
+
+Pour le back : Node Js, Express Js + npm modules (session etc), PostgreSQL & SQL.
+Pour le front : React Js, WebGL, Javascript Vanilla 
+
+Charte graphique
+
+- dans `doc/charte/CharteVintage.png` avec de gauche vers la droite :
+        * #18534F (vert foncé)
+        * #226D68 (vert pastel)
+        * #ECF8F6 (blanc)
+        * #FEEAA1 (beige)
+        * #D6955B (brun / orange pastel)
+    
+- dans `doc/charte/ChartePastel.png` avec de gauche vers la droite :
+        * #FE9D15 (orange foncé)
+        * #FEBB5F (orange pastel)
+        * #F7F7F7 (blanc)
+        * #C0F0EE (bleu pale)
+        * #2DBDB4 (turquoise pale)
