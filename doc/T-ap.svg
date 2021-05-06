@@ -1,0 +1,137 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="335" height="320" view_box="0 0 335 320"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Thu, 06 May 2021 14:03:54</desc>
+
+<rect id="frame" x="0" y="0" width="335" height="320" fill="#f5f5f5" stroke="none" stroke-width="0"/>
+
+<!-- Association has_difficulty -->
+<line x1="159" y1="143" x2="278" y2="143" stroke="#35978f" stroke-width="2"/>
+<text x="203" y="160.0" fill="#8c510a" font-family="Verdana" font-size="12">1,1</text>
+<line x1="278" y1="51" x2="278" y2="143" stroke="#35978f" stroke-width="2"/>
+<text x="283.0" y="102" fill="#8c510a" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-has_difficulty">
+	<path d="M 312 118 a 14 14 90 0 1 14 14 V 143 h -96 V 132 a 14 14 90 0 1 14 -14" fill="#80cdc1" stroke="#80cdc1" stroke-width="0"/>
+	<path d="M 326 143.0 v 11 a 14 14 90 0 1 -14 14 H 244 a 14 14 90 0 1 -14 -14 V 143.0 H 96" fill="#c7eae5" stroke="#c7eae5" stroke-width="0"/>
+	<rect x="230" y="118" width="96" height="50" fill="none" rx="14" stroke="#35978f" stroke-width="2"/>
+	<line x1="230" y1="143" x2="326" y2="143" stroke="#35978f" stroke-width="1"/>
+	<text x="237" y="135.7" fill="#000000" font-family="Verdana" font-size="12">has_difficulty</text>
+</g>
+
+<!-- Association has_result -->
+<line x1="48" y1="252" x2="48" y2="143" stroke="#35978f" stroke-width="2"/>
+<text x="53.0" y="185" fill="#8c510a" font-family="Verdana" font-size="12">0,N</text>
+<line x1="48" y1="51" x2="48" y2="143" stroke="#35978f" stroke-width="2"/>
+<text x="53.0" y="110" fill="#8c510a" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-has_result">
+	<path d="M 73 118 a 14 14 90 0 1 14 14 V 143 h -78 V 132 a 14 14 90 0 1 14 -14" fill="#80cdc1" stroke="#80cdc1" stroke-width="0"/>
+	<path d="M 87 143.0 v 11 a 14 14 90 0 1 -14 14 H 23 a 14 14 90 0 1 -14 -14 V 143.0 H 78" fill="#c7eae5" stroke="#c7eae5" stroke-width="0"/>
+	<rect x="9" y="118" width="78" height="50" fill="none" rx="14" stroke="#35978f" stroke-width="2"/>
+	<line x1="9" y1="143" x2="87" y2="143" stroke="#35978f" stroke-width="1"/>
+	<text x="16" y="135.7" fill="#000000" font-family="Verdana" font-size="12">has_result</text>
+</g>
+
+<!-- Association has_result1 -->
+<line x1="159" y1="143" x2="159" y2="51" stroke="#35978f" stroke-width="2"/>
+<text x="164.0" y="93" fill="#8c510a" font-family="Verdana" font-size="12">0,N</text>
+<line x1="48" y1="51" x2="159" y2="51" stroke="#35978f" stroke-width="2"/>
+<text x="77" y="68.0" fill="#8c510a" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-has_result1">
+	<path d="M 184 26 a 14 14 90 0 1 14 14 V 51 h -78 V 40 a 14 14 90 0 1 14 -14" fill="#80cdc1" stroke="#80cdc1" stroke-width="0"/>
+	<path d="M 198 51.0 v 11 a 14 14 90 0 1 -14 14 H 134 a 14 14 90 0 1 -14 -14 V 51.0 H 78" fill="#c7eae5" stroke="#c7eae5" stroke-width="0"/>
+	<rect x="120" y="26" width="78" height="50" fill="none" rx="14" stroke="#35978f" stroke-width="2"/>
+	<line x1="120" y1="51" x2="198" y2="51" stroke="#35978f" stroke-width="1"/>
+	<text x="127" y="43.7" fill="#000000" font-family="Verdana" font-size="12">has_result</text>
+</g>
+
+<!-- Association has_theme -->
+<line x1="278" y1="252" x2="159" y2="252" stroke="#35978f" stroke-width="2"/>
+<text x="226" y="269.0" fill="#8c510a" font-family="Verdana" font-size="12">0,N</text>
+<line x1="159" y1="143" x2="159" y2="252" stroke="#35978f" stroke-width="2"/>
+<text x="164.0" y="202" fill="#8c510a" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-has_theme">
+	<path d="M 186 227 a 14 14 90 0 1 14 14 V 252 h -82 V 241 a 14 14 90 0 1 14 -14" fill="#80cdc1" stroke="#80cdc1" stroke-width="0"/>
+	<path d="M 200 252.0 v 11 a 14 14 90 0 1 -14 14 H 132 a 14 14 90 0 1 -14 -14 V 252.0 H 82" fill="#c7eae5" stroke="#c7eae5" stroke-width="0"/>
+	<rect x="118" y="227" width="82" height="50" fill="none" rx="14" stroke="#35978f" stroke-width="2"/>
+	<line x1="118" y1="252" x2="200" y2="252" stroke="#35978f" stroke-width="1"/>
+	<text x="125" y="244.7" fill="#000000" font-family="Verdana" font-size="12">has_theme</text>
+</g>
+
+<!-- Entity difficulty -->
+<g id="entity-difficulty">
+	<g id="frame-difficulty">
+		<rect x="247" y="17" width="62" height="25" fill="#dfc27d" stroke="#dfc27d" stroke-width="0"/>
+		<rect x="247" y="42.0" width="62" height="43" fill="#f6e8c3" stroke="#f6e8c3" stroke-width="0"/>
+		<rect x="247" y="17" width="62" height="68" fill="none" stroke="#bf812d" stroke-width="2"/>
+		<line x1="247" y1="42" x2="309" y2="42" stroke="#bf812d" stroke-width="1"/>
+	</g>
+	<text x="252" y="34.7" fill="#000000" font-family="Verdana" font-size="12">difficulty</text>
+	<text x="252" y="59.8" fill="#000000" font-family="Verdana" font-size="12">title</text>
+	<line x1="252" y1="62" x2="276" y2="62" stroke="#000000" stroke-width="1"/>
+	<text x="252" y="76.8" fill="#000000" font-family="Verdana" font-size="12">color</text>
+</g>
+
+<!-- Entity game -->
+<g id="entity-game">
+	<g id="frame-game">
+		<rect x="120" y="101" width="78" height="25" fill="#dfc27d" stroke="#dfc27d" stroke-width="0"/>
+		<rect x="120" y="126.0" width="78" height="59" fill="#f6e8c3" stroke="#f6e8c3" stroke-width="0"/>
+		<rect x="120" y="101" width="78" height="84" fill="none" stroke="#bf812d" stroke-width="2"/>
+		<line x1="120" y1="126" x2="198" y2="126" stroke="#bf812d" stroke-width="1"/>
+	</g>
+	<text x="141" y="118.7" fill="#000000" font-family="Verdana" font-size="12">game</text>
+	<text x="125" y="143.8" fill="#000000" font-family="Verdana" font-size="12">title</text>
+	<line x1="125" y1="146" x2="149" y2="146" stroke="#000000" stroke-width="1"/>
+	<text x="125" y="160.8" fill="#000000" font-family="Verdana" font-size="12">category</text>
+	<text x="125" y="177.8" fill="#000000" font-family="Verdana" font-size="12">description</text>
+</g>
+
+<!-- Entity theme -->
+<g id="entity-theme">
+	<g id="frame-theme">
+		<rect x="253" y="218" width="50" height="25" fill="#dfc27d" stroke="#dfc27d" stroke-width="0"/>
+		<rect x="253" y="243.0" width="50" height="43" fill="#f6e8c3" stroke="#f6e8c3" stroke-width="0"/>
+		<rect x="253" y="218" width="50" height="68" fill="none" stroke="#bf812d" stroke-width="2"/>
+		<line x1="253" y1="243" x2="303" y2="243" stroke="#bf812d" stroke-width="1"/>
+	</g>
+	<text x="258" y="235.7" fill="#000000" font-family="Verdana" font-size="12">theme</text>
+	<text x="258" y="260.8" fill="#000000" font-family="Verdana" font-size="12">title</text>
+	<line x1="258" y1="263" x2="282" y2="263" stroke="#000000" stroke-width="1"/>
+	<text x="258" y="277.8" fill="#000000" font-family="Verdana" font-size="12">color</text>
+</g>
+
+<!-- Entity result -->
+<g id="entity-result">
+	<g id="frame-result">
+		<rect x="24" y="9" width="48" height="25" fill="#dfc27d" stroke="#dfc27d" stroke-width="0"/>
+		<rect x="24" y="34.0" width="48" height="59" fill="#f6e8c3" stroke="#f6e8c3" stroke-width="0"/>
+		<rect x="24" y="9" width="48" height="84" fill="none" stroke="#bf812d" stroke-width="2"/>
+		<line x1="24" y1="34" x2="72" y2="34" stroke="#bf812d" stroke-width="1"/>
+	</g>
+	<text x="30" y="26.7" fill="#000000" font-family="Verdana" font-size="12">result</text>
+	<text x="29" y="51.8" fill="#000000" font-family="Verdana" font-size="12">title</text>
+	<line x1="29" y1="54" x2="53" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="29" y="68.8" fill="#000000" font-family="Verdana" font-size="12">date</text>
+	<text x="29" y="85.8" fill="#000000" font-family="Verdana" font-size="12">points</text>
+</g>
+
+<!-- Entity user -->
+<g id="entity-user">
+	<g id="frame-user">
+		<rect x="10" y="193" width="76" height="25" fill="#dfc27d" stroke="#dfc27d" stroke-width="0"/>
+		<rect x="10" y="218.0" width="76" height="93" fill="#f6e8c3" stroke="#f6e8c3" stroke-width="0"/>
+		<rect x="10" y="193" width="76" height="118" fill="none" stroke="#bf812d" stroke-width="2"/>
+		<line x1="10" y1="218" x2="86" y2="218" stroke="#bf812d" stroke-width="1"/>
+	</g>
+	<text x="34" y="210.7" fill="#000000" font-family="Verdana" font-size="12">user</text>
+	<text x="15" y="235.7" fill="#000000" font-family="Verdana" font-size="12">first_name</text>
+	<line x1="15" y1="238" x2="81" y2="238" stroke="#000000" stroke-width="1"/>
+	<text x="15" y="252.8" fill="#000000" font-family="Verdana" font-size="12">last_name</text>
+	<text x="15" y="269.8" fill="#000000" font-family="Verdana" font-size="12">username</text>
+	<text x="15" y="286.8" fill="#000000" font-family="Verdana" font-size="12">password</text>
+	<text x="15" y="303.8" fill="#000000" font-family="Verdana" font-size="12">role</text>
+</g>
+</svg>
