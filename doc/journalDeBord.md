@@ -40,4 +40,12 @@ Charte graphique
 
 # Jour 3 : le 05/05/2021
 
-Je continue l'analyse du besoin en essayant de préciser des relations / entités 
+Traduction de l'analyse du besoin avec Mocodo
+Je continue l'analyse du besoin en essayant de préciser des relations / entités
+Questionnement sur l'implémentation de l'experience, statistique dans le MVP
+Beaucoup d'incohérence
+
+# Jour 4 : le 06/05/2021
+
+Discution avec Céline, prise de décision => la difficulté n'est plus liée à l'experience, les graphiques seront implémenté plus tard
+Reprise de l'analyse du besoin, des entités et des relation qui seront présentent dans le MVP

@@ -8,7 +8,7 @@ Bonjour, nous sommes une équipe d'ergothérapeute et nous voudrions avoir un si
 
 Dans les grandes ligne nous voudrions pouvoir stocker les utilisateurs dans une base de données.
 
-L'accès au site se fait par inscription, une partie du site est gratuite et une partie payante.
+L'accès au site se fait par inscription.
 
 Toute personne inscrite peut accéder au site, jouer aux jeux et modifier son profil, les visiteurs seulement la page d'acceuil. Les ergothérapeutes ont en plus la possiblité d'ajouter un eleve à une liste pour pouvoir suivre sa progression et avoir un rapport détaillé
 
@@ -17,4 +17,13 @@ Toute personne inscrite peut accéder au site, jouer aux jeux et modifier son pr
 cf : [Journal de bord](./doc/journalDeBord.md)
 
 ## Analyse du besoin
+
 cf : [Analyse du besoin](./doc/analyses.md)
+
+## Use cases
+
+cf : [Use cases](./doc/use_cases.md)
+
+## MCD
+
+cf : [MCD](./doc/MCD.md)
