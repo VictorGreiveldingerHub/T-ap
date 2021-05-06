@@ -49,3 +49,5 @@ Beaucoup d'incohérence
 
 Discution avec Céline, prise de décision => la difficulté n'est plus liée à l'experience, les graphiques seront implémenté plus tard
 Reprise de l'analyse du besoin, des entités et des relation qui seront présentent dans le MVP
+
+Branche création_MCD créée, Mise en place MCD + use cases
