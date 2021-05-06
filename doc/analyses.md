@@ -1,14 +1,42 @@
-# Mail client
+# Analyse du besoin
 
-Bonjour, nous sommes une équipe d'ergothérapeute et nous voudrions avoir un site web sur lequel les enfants en difficulté peuvent apprendre à frapper au clavier pour que sur le long terme ils puissent substituer l'écriture manuscrite à l'écriture sur ordinateur.
+## Ce qu'il y a 
 
-Dans les grandes ligne nous voudrions pouvoir stocker les utilisateurs dans une base de données.
+#### Les entités
 
-L'accès au site se fait par inscription, une partie du site est gratuite et une partie payante.
+- il y a un admin (username, password)
+- il y a des professionnels (username, password, status (numéro de licence ? Pour preuve ? => Donnée sensible))
+- il y a des élèves (username, password, avatar, age, status)
+- il y a des jeux (titre, categorie, description)
+- il y a des thématiques (titre, couleur, image)
+- il y a différents niveau de difficulté (label, coefficient, couleur)
+- il y a des résultats en fin de jeu (points)
+- il y a des résultats globaux (note)
+- il y a de l'expérience (temps, score)
 
-Toute personne inscrite peut accéder au site, jouer aux jeux et modifier son profil, les visiteurs seulement la page d'acceuil.
-Les ergothérapeutes ont en plus la possiblité d'ajouter un eleve à une liste pour pouvoir suivre sa progression et avoir un rapport détaillé
+#### Les relations 
 
+- un jeu à plusieurs niveaux de difficulté
+- un professionnel peut accéder au profil d'élève
+- un élève a un professionnel qui le suit
+- un élève a un résultat (en fin de jeu)
+- un résultat est lié a un seul eleve
+- un résultat est stocké dans une BDD
+- un élève a plusieurs résultats (globaux)
+- le niveau de difficulté augmente en fonction de l'expérience
+
+#### Le reste 
+
+- il y a une page de connexion pour les élèves
+- il y a une page de connexion pour les professionnels
+- le niveau du jeu influ sur le score
+
+
+## Ce qu'il n'y a pas
+
+- On ne choisit pas le niveau de difficulté
+
+/////////////////////////////////////////////////////
 
 ## Notes d'analyse
 

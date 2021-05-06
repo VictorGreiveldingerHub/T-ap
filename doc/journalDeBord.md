@@ -19,7 +19,7 @@ Mise en place d'un serveur simple avec Express Js (Renvoie bonjour pour l'instan
 Mise en place de l'architecture du code (Création des dossiers (views, statique, app, etc)).
 Recherche charte graphique
 
-Pour le back : Node Js, Express Js + npm modules (session etc), PostgreSQL & SQL.
+Pour le back : Node Js, Express Js + npm modules (session etc), moteur de rendu EJS (pour l'instant), PostgreSQL & SQL.
 Pour le front : React Js, WebGL, Javascript Vanilla 
 
 Charte graphique
@@ -37,3 +37,7 @@ Charte graphique
         * #F7F7F7 (blanc)
         * #C0F0EE (bleu pale)
         * #2DBDB4 (turquoise pale)
+
+# Jour 3 : le 05/05/2021
+
+Je continue l'analyse du besoin en essayant de préciser des relations / entités 
