@@ -10,6 +10,7 @@
 - il y a des jeux (titre, categorie, description)
 - il y a des thématiques (titre, couleur, image)
 - il y a différents niveau de difficulté (label, couleur)
+- il y a des résultats (title, date, points)
 
 Pour le MVP, pas de notion d'experience, statistique
 <!-- - il y a des résultats en fin de jeu (points)
@@ -19,27 +20,25 @@ Pour le MVP, pas de notion d'experience, statistique
 #### Les relations 
 
 - un professionnel peut accéder au profil d'élève
-- un élève a un professionnel qui le suit
+- un élève à un professionnel qui le suit
 - un jeu à un niveau de difficulté
-- un jeu a un theme
-- un eleve a des resultats
-- un jeu a des resultats
-
-
+- un jeu à un theme
+- un eleve à des resultats
+- un jeu à des resultats
 - un résultat est lié a un seul eleve
 - un résultat est stocké dans une BDD
-- un élève a plusieurs résultats (globaux)
-- un élève a un résultat (en fin de jeu)
+- un élève à plusieurs résultats (globaux)
 
 #### Le reste 
 
 - il y a une page de connexion pour les élèves
 - il y a une page de connexion pour les professionnels
+- le niveau de difficulté influe sur le résultat
+- les résultats sont enregistrés dans la BDD
 
 
 ## Ce qu'il n'y a pas
 
-- On ne choisit pas le niveau de difficulté
 
 /////////////////////////////////////////////////////
 

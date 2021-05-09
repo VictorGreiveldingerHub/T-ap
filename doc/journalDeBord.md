@@ -51,3 +51,8 @@ Discution avec Céline, prise de décision => la difficulté n'est plus liée à
 Reprise de l'analyse du besoin, des entités et des relation qui seront présentent dans le MVP
 
 Branche création_MCD créée, Mise en place MCD + use cases
+
+# Jour 5 : le 07/05/2021
+
+Relecture de mes analyses, MCD pour voir si tout est bon pour la suite.
+Simplification des besoins
