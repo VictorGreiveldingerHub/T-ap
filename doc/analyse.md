@@ -4,41 +4,33 @@
 
 #### Les entités
 
-- il y a un admin (username, password)
-- il y a des professionnels (username, password, status (numéro de licence ? Pour preuve ? => Donnée sensible))
-- il y a des élèves (username, password, avatar, age, status)
+- il y a des users (username, password, avatar, age, status)
 - il y a des jeux (titre, categorie, description)
 - il y a des thématiques (titre, couleur, image)
 - il y a différents niveau de difficulté (label, couleur)
 - il y a des résultats (title, date, points)
 
-Pour le MVP, pas de notion d'experience, statistique
-<!-- - il y a des résultats en fin de jeu (points)
-- il y a des résultats globaux (note)
-- il y a de l'expérience (temps, score) -->
 
 #### Les relations 
 
 - un professionnel peut accéder au profil d'élève
 - un élève à un professionnel qui le suit
 - un jeu à un niveau de difficulté
-- un jeu à un theme
-- un eleve à des resultats
-- un jeu à des resultats
-- un résultat est lié a un seul eleve
+- un jeu à un thème
+- un élève à des résultats
+- un jeu à un résultat
 - un résultat est stocké dans une BDD
-- un élève à plusieurs résultats (globaux)
 
 #### Le reste 
 
-- il y a une page de connexion pour les élèves
-- il y a une page de connexion pour les professionnels
-- le niveau de difficulté influe sur le résultat
+- il y a une page de connexion les users
+- le niveau de difficulté influe sur le résultat (coefficient)
 - les résultats sont enregistrés dans la BDD
 
 
 ## Ce qu'il n'y a pas
 
+Pour le MVP, pas de notion d'expérience, statistique.
 
 /////////////////////////////////////////////////////
 

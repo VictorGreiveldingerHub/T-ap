@@ -56,3 +56,9 @@ Branche création_MCD créée, Mise en place MCD + use cases
 
 Relecture de mes analyses, MCD pour voir si tout est bon pour la suite.
 Simplification des besoins
+
+# Jour 6 : le 10/05/2021
+
+Mise au propre des notes d'analyse => petits changements pour les relations + MCD
+Mise au propre des relations dans le fichier associé
+Mise en place du fichier create_db.sql => début de la base de donnée => création des tables, relations 
