@@ -10,7 +10,11 @@ Dans les grandes ligne nous voudrions pouvoir stocker les utilisateurs dans une 
 
 L'accès au site se fait par inscription.
 
-Toute personne inscrite peut accéder au site, jouer aux jeux et modifier son profil, les visiteurs seulement la page d'acceuil. Les ergothérapeutes ont en plus la possiblité d'ajouter un eleve à une liste pour pouvoir suivre sa progression et avoir un rapport détaillé
+Toute personne inscrite peut accéder au site, jouer aux jeux et modifier son profil, les visiteurs seulement la page d'acceuil. Les ergothérapeutes ont en plus la possiblité d'ajouter un élève à une liste pour pouvoir suivre sa progression et avoir un rapport détaillé.
+
+Un utilisateur peut jouer aux jeux, à la fin de chaque partie il récupère un score, ce score devra être stocké dans une BDD pour pouvoir l'utiliser dans la partie graphique et avoir un petit classement de l'utilisateur dans une section dédié (vos scores par exmple : 1 : le xx/xx/xxxx, 48 points).
+
+Pas de notion d'experience pour l'instant on verra cela plus tard et tous les jeux ont 3 niveaux de difficultés et un theme (ou pas)
 
 ## Journal de bord disponible
 
