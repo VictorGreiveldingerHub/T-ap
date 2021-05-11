@@ -8,11 +8,11 @@
     Ajouter une colonne dans la table result, qui renvoie à l'id de la table user
 
 
-### result <-> game
+### game <-> result
 
     - Type de relation : 1:N
-    1 result possède N result(s)
-    Ajouter une colonne dans la table result, qui renvoie à l'id de la table user
+    1 game possède N result(s)
+    Ajouter une colonne dans la table result, qui renvoie à l'id de la table game
 
 ### game <-> theme
 
