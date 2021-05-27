@@ -3,6 +3,8 @@ require('dotenv').config();
 
 const express = require('express');
 
+const router = require('./app/router');
+
 // Initialisation du port d'écoute
 const PORT = process.env.PORT || 8080;
 
