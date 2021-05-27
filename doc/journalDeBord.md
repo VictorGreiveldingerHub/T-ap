@@ -61,4 +61,23 @@ Simplification des besoins
 
 Mise au propre des notes d'analyse => petits changements pour les relations + MCD
 Mise au propre des relations dans le fichier associé
-Mise en place du fichier create_db.sql => début de la base de donnée => création des tables, relations 
+Mise en place du fichier create_db.sql => début de la base de donnée => création des tables, relations
+
+# Jour 7 : le 27/05/2021
+
+Mise en place de la base de donnée, injection des datas dans celle ci
+Création d'un utilisateur Postgres "tap" + mdp + droits
+Création de la BDD "tap" 
+Création des tables
+Import des données
+
+Problemes : ERROR:  there is no unique constraint matching given keys for referenced table "game"
+Doc :
+        https://www.postgresql.org/message-id/CAADeyWgSLC-crOa%2BcFg_EOfVtrmjTXSFFWfEdKuOnKRBUg%3DqEg%40mail.gmail.com
+
+Solution : Passage d'une réference dans la table a seulement l'expression d'un entier auquel rattacher le resultat
+
+Prob : psql:DB/import_data.sql:146: ERROR:  syntax error at or near ";"
+LINE 22: ...admin', NULL, '2021-04-18 03:56:11', '2021-05-18 13:56:11');
+
+Resolu : erreur de syntaxe dans une des ligne
