@@ -81,3 +81,20 @@ Prob : psql:DB/import_data.sql:146: ERROR:  syntax error at or near ";"
 LINE 22: ...admin', NULL, '2021-04-18 03:56:11', '2021-05-18 13:56:11');
 
 Resolu : erreur de syntaxe dans une des ligne
+
+## Création de l'architecture avec dataMapper dans un premier temps avec Express, dotenv et pg
+
+        - npm Express, dotenv et pg
+        - création d'un .env (variables d'environnement + url de la BDD)
+        - .gitignore => fichiers non désirables ou sensible (mdp etc)
+        - index.js point d'entré de l'application express
+        - dossier app: 
+                - dossier integration (css, html statique)
+                - dossier controllers
+                - dossier views
+                - dataMapper
+                - database
+                - router
+                
+                
+        

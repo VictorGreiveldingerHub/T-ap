@@ -31,3 +31,7 @@ cf : [Use cases](./doc/use_cases.md)
 ## MCD
 
 cf : [MCD](./doc/MCD.md)
+
+## Création de la BDD 
+
+cf : [BDD](./DB)
