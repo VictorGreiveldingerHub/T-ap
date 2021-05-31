@@ -95,6 +95,12 @@ Resolu : erreur de syntaxe dans une des ligne
                 - dataMapper
                 - database
                 - router
-                
-                
-        
+
+# Jour 8 : 28/05/2021
+
+Mise en place des pages ejs, 404, nav, header, footer, homepage + factorisation
+
+# Jour 9 : 31/05/2021
+
+Mise en place des pages Liste de jeux, progression et les formulaires de connexions
+Mise en place du css selon wireframes

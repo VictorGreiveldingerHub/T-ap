@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+    <div>
+        <h2 class="welcome"> Liste des jeux </h2>
+    </div>
+    
+    <div class="row">
+    <% for (let game of games) {%>
+        <div class="col">
+            <h3><%= game.title %></h3>
+            <h5><%= game.description %></h5>
+        </div>
+    <% } %>
+    </div>
+    
+<%- include('partials/footer') %>
