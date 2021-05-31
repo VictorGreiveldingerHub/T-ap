@@ -17,6 +17,14 @@ const dataMapper = {
         const query = `SELECT * FROM "result" WHERE "user_id" = 1`;// Pour l'instant je fais du statique
         
         client.query(query, callback);
+    },
+    
+    // Récupérer le bon jeu et afficher sa view
+    getOneGame: (id, callback) => {
+        const query = `SELECT * FROM "game" WHERE "id" = $1`;
+        const values = [id];
+        
+        client.query(query, values, callback);
     }
 };
 

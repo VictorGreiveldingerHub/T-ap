@@ -13,6 +13,7 @@ router.get('/', mainController.homePage);
 
 // page des jeux
 router.get('/gameList', gameController.gamePage);
+router.get('/gameList/:id', gameController.oneGame);
 
 // page progression
 router.get('/progression', progressionController.progresPage);
