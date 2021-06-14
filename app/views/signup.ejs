@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+    
+    <div>
+        <form method="POST" action="/signup">
+            <div>
+                <label>Prénom :</label>
+                <input type="text" name="firstname" id="input-firstname"/>
+            </div>
+            <div>
+                <label>Nom :</label>
+                <input type="text" name="lastname" id="input-lastname"/>
+            </div>
+            <div>
+                <label>Email :</label>
+                <input type="text" name="email" id="input-email"/>
+            </div>
+            <div>
+                <label>Password :</label>
+                <input type="text" name="password" id="input-password"/>
+            </div>
+            <div>
+                <label>Confirmation du password :</label>
+                <input type="text" name="password-confirm" id="input-password-confirm"/>
+            </div>
+            <input type="submit" value="S'inscire" />
+        </form>
+    </div>
+
+<%- include ('partials/footer') %>

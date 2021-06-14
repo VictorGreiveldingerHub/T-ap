@@ -7,8 +7,18 @@ const gameController = {
                 console.trace(err);
                 res.status(500).render('500', {err});
             } else {
-                res.render('gameList', {
-                    games: data.rows,
+                dataMapper.getTagsForGame((err2, data2) => {
+                    if (err2) {
+                        console.trace(err2);
+                        res.status(500).render('500', {err2});
+                    } else {
+                        console.log(data2.rows[0]);
+                        const gamesTag = data2.rows[0];
+                        res.render('gameList', {
+                            games: data.rows,
+                            gamesTag: data2.rows
+                        });
+                    };
                 });
             };
         });
@@ -24,7 +34,6 @@ const gameController = {
                 res.status(500).render('500', {err});
             } else {
                 const goodGame = data.rows[0];
-                console.log(goodGame);
                 res.render('game', {
                     goodGame,
                 });

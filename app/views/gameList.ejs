@@ -1,17 +1,24 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 
+<section class="game-section">
     <div>
         <h2 class="welcome"> Liste des jeux </h2>
     </div>
-    
-    <div class="row">
-    <% for (let game of games) {%>
-        <div class="col">
-            <a href="/gameList/<%=game.id%>"><h3><%= game.title %></h3></a>
-            <h5><%= game.description %></h5>
+        <div class="games">
+            <% for (let game of games) { %>
+                <div class="game">
+                    <a href="/gameList/<%=game.id%>"><h3><%= game.title %></h3></a>
+                    <section class="description-section">
+                        <h4>Description</h4>
+                        <span><%= game.description %></span>
+                        <% for (let tag of gamesTag) {%>
+                            <p><%= tag.title %></p>
+                        <% } %>
+            </section>
         </div>
     <% } %>
     </div>
+</section>
     
 <%- include('partials/footer') %>

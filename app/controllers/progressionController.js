@@ -13,6 +13,19 @@ const progressionController = {
                 });
             };
         });
+    },
+    
+    progresPageByGame: (req, res) => {
+        dataMapper.getResult((err, data) => {
+            if (err) {
+                console.trace(err);
+                res.status(500).render('500');
+            } else {
+                res.render('progressionGame', {
+                    results : data.rows,
+                });
+            };
+        });
     }
 };
 

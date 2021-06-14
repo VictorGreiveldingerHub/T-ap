@@ -22,9 +22,26 @@ const dataMapper = {
     // Récupérer le bon jeu et afficher sa view
     getOneGame: (id, callback) => {
         const query = `SELECT * FROM "game" WHERE "id" = $1`;
+        // Eviter les injections SQL dans la page
         const values = [id];
         
         client.query(query, values, callback);
+    },
+    
+    // Récupérer les résultats pour un jeu
+    getResults: (callback) => {
+        const query = `SELECT * FROM "result" WHERE "user_id" = 1`;
+        // const values = [id];
+        
+        client.query(query, callback);
+    },
+    
+    // Récupérer les tags d'un jeu
+    getTagsForGame: (callback) => {
+        const query = `SELECT * FROM "game_has_theme" JOIN "theme" ON "game_has_theme"."theme_id" = "theme"."id"`;
+        console.log(query);
+        
+        client.query(query, callback);
     }
 };
 
