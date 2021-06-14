@@ -5,13 +5,16 @@ const authController = {
         res.render('login');
     },
     
-    // Traiter le fomrmulaire de connexion
+    // Traiter le formulaire de connexion
     // loginAction
     
     // Afficher le form d'inscription
     signupPage: (req, res) => {
         res.render('signup');
-    }
+    },
+    
+    // Traiter le formulaire d'inscription
+    // signupAction
 };
 
 module.exports = authController;
