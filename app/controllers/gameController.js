@@ -10,18 +10,40 @@ const gameController = {
                 console.trace(err);
                 res.status(500).render('500', {err});
             } else {
-                
                 dataMapper.getTagsForGame((err2, data2) => {
                     if (err2) {
                         console.trace(err2);
                         res.status(500).render('500', {err2});
                     } else {
-                        console.log(data2.rows);
-                        const gamesTag = data2.rows;
+                        // console.log(data2.rows);    
+                        // console.log(data.rows);
+                        const goodGames = data.rows;
+                        const goodTheme = data2.rows;
+                        
+                        // for (let game of goodGames) {
+                        //     console.log(game.id);
+                        //     // Je veux récupérer le titre du theme pour chaque jeu
+                        //     goodTheme.forEach(element => {
+                        //         // console.log(element);
+                        //         if (element.game_id === game.id) {
+                                    
+                        //             const theme = element.title;
+                        //             // console.log(theme);
+                        //             // return theme;
+                        //             res.render('gameList', {
+                        //                 goodGames,
+                        //                 theme  
+                        //             });
+                        //         };
+                                
+                        //         // console.log(theme)
+                        //     });
+                        // };
+                        // console.log(goodGames);
                         
                         res.render('gameList', {
-                            games: data.rows,
-                            gamesTag
+                            goodGames,
+                            goodTheme  
                         });
                     };
                 });
@@ -29,7 +51,7 @@ const gameController = {
         });
     },
     
-    oneGame: (req, res) => {
+    getOneGame: (req, res) => {
         // Pour récupérer le bon jeu
         const gameId = req.params.id;
         

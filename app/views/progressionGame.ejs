@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+    <p>Progression sur le jeu</p>
+    
+    <% for (let result of results) { %>
+    <ul>
+        <li><%= result.point %></li>
+        <li><%= result.created_at %></li>
+        <li><%= result.user_id %></li>
+        <li><%= result.game_id %></li>
+    </ul>
+    <% } %>
+<%- include('partials/footer') %>

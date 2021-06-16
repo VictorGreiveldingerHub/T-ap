@@ -12,11 +12,12 @@ const dataMapper = {
     },
     
     // Cherche tous les résultats d'un utilisateur
-    getAllResults: (callback) => {
+    getAllResults: (userId, callback) => {
         // Récup les résultats
-        const query = `SELECT * FROM "result" WHERE "user_id" = 1`;// Pour l'instant je fais du statique
+        const query = `SELECT * FROM "result" WHERE "user_id" = $1`;
+        const values = [userId];
         
-        client.query(query, callback);
+        client.query(query, values, callback);
     },
     
     // Récupérer le bon jeu et afficher sa view
@@ -29,11 +30,11 @@ const dataMapper = {
     },
     
     // Récupérer les résultats pour un jeu
-    getResults: (callback) => {
-        const query = `SELECT * FROM "result" WHERE "user_id" = 1`;
-        // const values = [id];
+    getResults: (gameId, callback) => {
+        const query = `SELECT * FROM "result" WHERE "game_id" = $1`;
+        const values = [gameId];
         
-        client.query(query, callback);
+        client.query(query, values, callback);
     },
     
     // Récupérer les tags d'un jeu
@@ -42,7 +43,22 @@ const dataMapper = {
         console.log(query);
         
         client.query(query, callback);
-    }
+    },
+    
+    
+    // Pour ajouter un utilisateur à la BDD
+    addUser: (userInfo, callback) => {
+        const {firstname, lastname, email, password} = userInfo;
+        
+        const query = `INSERT INTO "user" (
+            "firstname",
+            "lastname",
+            "email",
+            "password"
+        ) VALUES ($1, $2, $3, $4)`;
+        const values = [firstname, lastname, email, password];
+        client.query(query, values, callback);
+    },
 };
 
 module.exports = dataMapper;

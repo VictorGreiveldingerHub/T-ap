@@ -2,7 +2,9 @@ const dataMapper = require('../dataMapper');
 
 const progressionController = {
     progresPage: (req, res) => {
-        dataMapper.getAllResults((err, data) => {
+        const userId = req.params.id;
+        
+        dataMapper.getAllResults(userId, (err, data) => {
             if (err) {
                 console.trace(err);
                 res.status(500).render('500');
@@ -16,7 +18,9 @@ const progressionController = {
     },
     
     progresPageByGame: (req, res) => {
-        dataMapper.getResult((err, data) => {
+        const gameId = req.params.id;
+        
+        dataMapper.getResults(gameId, (err, data) => {
             if (err) {
                 console.trace(err);
                 res.status(500).render('500');

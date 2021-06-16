@@ -15,6 +15,9 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
+// Pour récuperer les données du form en POST = urlEncoded
+app.use(express.urlencoded({extended: true}));
+
 // servir les fichiers statiques qui sont dans "integration"
 app.use(express.static('integration'));
 
