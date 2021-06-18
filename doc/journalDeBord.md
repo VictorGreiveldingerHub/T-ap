@@ -104,3 +104,8 @@ Mise en place des pages ejs, 404, nav, header, footer, homepage + factorisation
 
 Mise en place des pages Liste de jeux, progression et les formulaires de connexions
 Mise en place du css selon wireframes
+
+# Jour 10 : 10/06/2021
+
+Construction des controllers et des méthodes du dataMapper pour récupérer les informations de la base de données.
+Construction des formulaires de login et d'inscription

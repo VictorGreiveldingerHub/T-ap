@@ -2,16 +2,16 @@
 <%- include('partials/nav') %>
     
     <div>
-        <form method="POST" action="/login">
-            <div>
+        <form method="POST" action="/login" class="signup-form">
+            <div class="informations">
                 <label>Email :</label>
                 <input type="text" name="email" id="input-email"/>
             </div>
-            <div>
+            <div class="informations">
                 <label>Password :</label>
                 <input type="text" name="password" id="input-password"/>
             </div>
-            <input type="submit" value="Se connecter" />
+            <input class="informations" id="signup" type="submit" value="Se connecter" />
         </form>
     </div>
 

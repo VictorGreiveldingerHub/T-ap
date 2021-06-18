@@ -6,19 +6,13 @@
         <h2 class="welcome"> Liste des jeux </h2>
     </div>
     <div class="games">
-        <% for (let game of goodGames) { %>
-            <% for (let element of goodTheme) { %>
-                <% if (element.game_id === game.id) { %>
-                    <div class="game">
-                        <a href="/gameList/<%=game.id%>"><h3><%= game.title %></h3></a>
-                        <section class="description-section">
-                            <h4>Description</h4>
-                            <span><%= game.description %></span>
-                            <p><%= element.title %></p>
-                        </section>
-                    </div>
-                <% } %>
-            <% } %>
+        <% for (let game of games) { %>
+            <div class="game">
+                <a href="/gameList/<%=game.id%>"><h3><%= game.title %></h3></a>
+                <section class="description-section">
+                    <span><%= game.description %></span>
+                </section>
+            </div>
         <% } %>
     </div>
 </section>

@@ -9,7 +9,7 @@ const authController = {
     
     // Traiter le formulaire de connexion
     loginAction: (req, res) => {
-        const { email, password } = req.body;
+        
     },
     
     // Afficher le form d'inscription

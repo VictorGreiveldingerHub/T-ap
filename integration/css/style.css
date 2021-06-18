@@ -108,3 +108,23 @@ li {
 }
 
 /* JEU */
+
+
+/* Signup */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.informations {
+    margin: 1em;
+}
+
+#signup {
+    margin: auto;
+    padding: 0 1em;
+    margin-bottom: 6em;
+}

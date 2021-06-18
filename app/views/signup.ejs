@@ -2,28 +2,28 @@
 <%- include('partials/nav') %>
     
     <div>
-        <form method="POST" action="/signup">
-            <div>
+        <form method="POST" action="/signup" class="signup-form">
+            <div class="informations">
                 <label>Prénom :</label>
                 <input type="text" name="firstname" id="input-firstname"/>
             </div>
-            <div>
+            <div class="informations">
                 <label>Nom :</label>
                 <input type="text" name="lastname" id="input-lastname"/>
             </div>
-            <div>
+            <div class="informations">
                 <label>Email :</label>
                 <input type="text" name="email" id="input-email"/>
             </div>
-            <div>
+            <div class="informations">
                 <label>Password :</label>
                 <input type="password" name="password" id="input-password"/>
             </div>
-            <div>
+            <div class="informations">
                 <label>Confirmation du password :</label>
                 <input type="password" name="password-confirm" id="input-password-confirm"/>
             </div>
-            <input type="submit" value="S'inscire" />
+            <input class="informations" id="signup" type="submit" value="S'inscire" />
         </form>
     </div>
 

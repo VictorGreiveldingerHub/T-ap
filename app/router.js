@@ -17,10 +17,10 @@ router.get('/gameList', gameController.gamePage);
 router.get('/gameList/:id', gameController.getOneGame);
 
 // page progression => récupérer les résultats d'un user
-router.get('/progression/:id', progressionController.progresPage);
+router.get('/progression', progressionController.progresPage);
 
 // page progression => récupérer les résultats d'un jeu
-router.get('/progression/game/:id', progressionController.progresPageByGame);
+// router.get('/progression/game/:id', progressionController.progresPageByGame);
 
 
 // page se connecter

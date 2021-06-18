@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 // Instanciation du serveur avec express
 const app = express();
 
+
 // Utilisation d'EJS réglages moteur de rendu
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
