@@ -2,7 +2,10 @@
 require('dotenv').config();
 
 // Les cookies avec cookie-parser
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
+
+// Les session avec express-session
+const session = require('express-session');
 
 const express = require('express');
 
@@ -15,7 +18,16 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 // On passe le middleware cookie a l'application
-app.use(cookieParser());
+// app.use(cookieParser());
+app.use(session({
+    secret: 'vers le titre pro',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: (1000*60*60),
+        secure: false
+    }
+}))
 
 // Utilisation d'EJS réglages moteur de rendu
 app.set('view engine', 'ejs');

@@ -117,3 +117,10 @@ Premiere version, sur ma page progression, je veux qu'on dise bonjour "machin" s
 Si je ne suis pas connecté, je veux etre redirigé vers le formulaire de connexion pour connecter, et si je n'ai pas de compte, je veux accèder au formulaire d'inscription 
 
 Mais req.headers.cookie c'est une chaine de caractère alors j'utilise cookie-parser pour manipuler tout ça (plus simple).
+
+Problème => le test est stocké en clair dans le navigateur ... donc un utilisateur peut modifier son nom et se faire passer pour quelqu'un d'autre ! 
+
+Je vais donc utiliser des sessions !
+Au lieu de passer les infos en clair dans les cookies, je met un id dans le cookie et les infos sont conservé côté serveur !
+
+MD => express-session 

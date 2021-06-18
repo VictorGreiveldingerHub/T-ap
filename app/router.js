@@ -34,6 +34,10 @@ router.post('/login', authController.loginAction);
 router.get('/signup', authController.signupPage);
 router.post('/signup', authController.signupAction);
 
+
+// pour supprimer un utilisateur de la BDD
+router.get('/route/pour/delete/user/:id', authController.deleteUser);
+
 // Pour gérer les 404
 router.use((req, res) => {res.status(404).render('404')});
 

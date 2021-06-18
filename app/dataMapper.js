@@ -21,6 +21,16 @@ const dataMapper = {
         client.query(query, values, callback);
     },
     
+    // On cherche si un utilisateur est déjà présent en BDD
+    searchUser: (email, callback) => {
+        const query = `SELECT "email" FROM "user" WHERE "email" IN ($1)`;
+        const values = [email];
+        console.log('Valeur du mail dans dataMApper', values);
+        
+        console.log(query);
+        client.query(query, values, callback);
+    },
+    
     // Pour ajouter un utilisateur à la BDD
     addUser: (userInfo, callback) => {
         const {firstname, lastname, email, password} = userInfo;
@@ -34,6 +44,14 @@ const dataMapper = {
         const values = [firstname, lastname, email, password];
         client.query(query, values, callback);
     },
+    
+    // Supprimer un utilisateur de la BDD
+    deleteUser: (userId, callback) => {
+        const query = `DELETE FROM "user" WHERE "id" = $1`;
+        const values = [userId];
+        
+        client.query(query, values, callback);
+    }
 };
 
 module.exports = dataMapper;
