@@ -1,6 +1,9 @@
 // import des variables d'environnements
 require('dotenv').config();
 
+// Les cookies avec cookie-parser
+const cookieParser = require('cookie-parser');
+
 const express = require('express');
 
 const router = require('./app/router');
@@ -11,6 +14,8 @@ const PORT = process.env.PORT || 8080;
 // Instanciation du serveur avec express
 const app = express();
 
+// On passe le middleware cookie a l'application
+app.use(cookieParser());
 
 // Utilisation d'EJS réglages moteur de rendu
 app.set('view engine', 'ejs');

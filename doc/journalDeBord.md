@@ -109,3 +109,11 @@ Mise en place du css selon wireframes
 
 Construction des controllers et des méthodes du dataMapper pour récupérer les informations de la base de données.
 Construction des formulaires de login et d'inscription
+Utilisation de cookie / session pour verifier si un utlisateur est connecté et donc permettre l'accessiblité à certaines pages du site (progression, profil etc)
+
+Avec le cookie => présente un probleme majeur, il sont en clairs dans les headers, donc interceptables et potentiellement "volables".
+
+Premiere version, sur ma page progression, je veux qu'on dise bonjour "machin" si je suis connecté
+Si je ne suis pas connecté, je veux etre redirigé vers le formulaire de connexion pour connecter, et si je n'ai pas de compte, je veux accèder au formulaire d'inscription 
+
+Mais req.headers.cookie c'est une chaine de caractère alors j'utilise cookie-parser pour manipuler tout ça (plus simple).
