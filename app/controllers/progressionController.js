@@ -2,12 +2,15 @@ const dataMapper = require('../dataMapper');
 
 const progressionController = {
     progresPage: (req, res) => {
-        
-        console.log(req.session);
-        
-        res.render('progression', {
-            test: 'sessions',
-        });
+                
+        if (req.session.username) {
+            res.render('progression', {
+                username: req.session.username
+            });
+        } else {
+            // y'a rien dans la session ==> va te connecter
+            res.redirect('/login');
+        };
     },
     
     progresPageByGame: (req, res) => {

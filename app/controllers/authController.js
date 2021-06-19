@@ -19,13 +19,36 @@ const authController = {
         // // Je dis au navigateur d'enregistrer l'information dans un cookie
         // // méthode cookie de res
         // res.cookie('email', email);
-        console.log(req.session.email);
+        // l'information qui m'interesse (le username) est dans req.body
+        const username = req.body.username;
+
+        // si on a pas d'info, on redirige
+        if (!username) {
+            return res.redirect('/login');
+        };
+
+        // Si j'ai un nom d'utilisateur (dans le futur, j'irai vérifer le mot de passe ...)
+
+        // Aujourd'hui on laisse tout le monde entrer
+        // je vais donc DIRE ("répondre") au navigateur "enregistre cette info dans un cookie"
+        // pour faire ça, on utilise la méthode "cookie" de res
+        // res.cookie('username', username);
+
+        // EDIT : on veut utiliser express-session au final
+        // grace au MDW on peut directement utiliser l'objet req.session
+        // On peut l'utiliser en lecture et en ecriture 
+        req.session.username = username;
+
+        // maintenant que l'info est dans un cookie, je peux rediriger vers '/'
+        res.redirect('/');
     },
     
     // Méthode pour se déconnecter de la session 
     logout: (req, res) => {
-        // Supprimer le user de la session
-        delete req.session.user;
+        delete req.session.username; // c'est l'équivalent de `req.session.username = undefined;`
+
+        //et hop, on redirige
+        res.redirect('/');
     },
     
     // Afficher le form d'inscription

@@ -1,18 +1,16 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
     
-    <div>
-        <form method="POST" action="/login" class="signup-form">
-            <div class="informations">
-                <label for="email">Email :</label>
-                <input type="text" name="email" id="input-email"/>
-            </div>
-            <div class="informations">
-                <label>Password :</label>
-                <input type="password" name="password" id="input-password"/>
-            </div>
-            <input class="informations" id="signup" type="submit" value="Se connecter" />
-        </form>
+<h1>Connexion :</h1>
+<form action="/login" method="post">
+    <div class="form-group">
+        <label for="username">Login : </label>
+        <input type="text" name="username" id="username" placeholder="Votre login">
     </div>
+
+    <div class="form-group">
+        <input type="submit" value="Connexion">
+    </div>
+</form>
 
 <%- include ('partials/footer') %>

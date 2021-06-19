@@ -27,6 +27,9 @@ router.get('/progression', progressionController.progresPage);
 router.get('/login', authController.loginPage);
 router.post('/login', authController.loginAction);
 
+// Page pour se déconnecter de la session
+router.get('/logout', authController.logout);
+
 // page profil
 // router.get('/profile', userController.getProfil);
 
