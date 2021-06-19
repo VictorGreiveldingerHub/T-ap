@@ -7,7 +7,6 @@ const dataMapper = {
         // Requete pour récup les figurines
         const query = `SELECT * FROM "game"`;
 
-        console.log(query);
         // Je lance la requete mais le callback je ne le définis pas dans dataMapper
         client.query(query, callback);
     },
@@ -49,6 +48,15 @@ const dataMapper = {
     deleteUser: (userId, callback) => {
         const query = `DELETE FROM "user" WHERE "id" = $1`;
         const values = [userId];
+        
+        client.query(query, values, callback);
+    },
+    
+    // Récupérer le nom du theme associé au jeu avec la table de liaison "game_has_theme"
+    getGameAndTheme: (gameId, callback) => {
+        
+        const query = `SELECT "t"."title" FROM "game_has_theme" AS "gt" JOIN "theme" AS "t" ON "gt"."theme_id" = "t"."id" WHERE "gt"."game_id" = $1`;
+        const values = [gameId];
         
         client.query(query, values, callback);
     }

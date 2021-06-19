@@ -14,7 +14,7 @@ router.get('/', mainController.homePage);
 
 // page des jeux
 router.get('/gameList', gameController.gamePage);
-router.get('/gameList/:id', gameController.getOneGame);
+router.get('/gameList/:id', gameController.getOneGameAndTheme);
 
 // page progression => récupérer les résultats d'un user
 router.get('/progression', progressionController.progresPage);

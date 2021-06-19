@@ -5,6 +5,9 @@
         <h2 class="welcome"><%= goodGame.title %></h2>
         <p><%= goodGame.description %></p>
         <p><%= goodGame.rule %></p>
+        <% for (let t of theme) { %>
+            <p><%= t.title %></p>
+        <% } %> 
     </div>
     
 <%- include('partials/footer') %>
