@@ -1,30 +1,26 @@
-// Création d'une classe par entité 
-class User {
-    // Mise en place des propriétés
-    id;
+const CoreModel = require('./coreModel');
+
+// Avec la création du CoreModel,
+class User extends CoreModel {
+    // Mise en place des propriétés pour chaque champ de la table correspondante.
     firstname;
     lastname;
     email;
     password;
     role;
     avatar;
-    created_at;
-    updated_at;
 
-    // Mise en place du constructor
-    // Prend en param un objet qui contient toutes les valeurs à recopier dans l'instance
     constructor(obj) {
-        this.id = obj.id;
+        super(obj); // quand je vais construire un User, je vais d'abord construire un CoreModel en lui passant les valeurs (id, created_at, updated_at)
+        
+        // Puis je vais continuer le travail en prenant email, password etc ...
         this.email = obj.email;
         this.password = obj.password;
         this.firstname = obj.firstname;
         this.lastname = obj.lastname;
         this.role = obj.role;
         this.avatar = obj.avatar;
-        this.created_at = obj.created_at;
-        this.updated_at = obj.updated_at;
     };
 };
 
-// On export la classe !
 module.exports = User; 

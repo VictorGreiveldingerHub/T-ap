@@ -1,4 +1,7 @@
-// Création d'une classe par entité 
+// Vu que les propriétés id, created_at et updated_at sont présentent dans toutes les classes, au lieu de se répéter
+// on vient coder un CoreModel avec l'héritage pour la factorisation.
+
+// Toutes les classes vont donc hériter de CoreModel
 class CoreModel {
     // Mise en place des propriétés
     id;
