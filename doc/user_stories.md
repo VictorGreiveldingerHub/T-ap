@@ -1,4 +1,4 @@
-# Use cases :
+# User stories :
 
 | # | En tant que | je veux pouvoir | afin de |
 | --- | --- | --- | --- |

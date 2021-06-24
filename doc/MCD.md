@@ -1,6 +1,6 @@
 # Avec l'utilisation de Mocodo
 
-user: first_name, last_name, username, password, role, avatar
+user: firstname, lastname, email, password, role, avatar
 game: title, category, description, color, rule
 theme: title, color
 result: title, date, point
@@ -16,7 +16,7 @@ has_results, 0N user, 11 result
 
 theme: title, color
 has, 1N game, 1N theme
-user: first_name, last_name, username, password, role, avatar
+user: firstname, lastname, email, password, role, avatar
 
 has1, 1N game, 1N difficulty
 game: title, description, color, rule

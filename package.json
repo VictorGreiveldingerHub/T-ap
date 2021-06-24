@@ -1,0 +1,31 @@
+{
+  "name": "T-ap",
+  "version": "1.0.0",
+  "description": "L'application pour l'aide à la frappe au clavier",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorGreiveldingerHub/T-ap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorGreiveldingerHub/T-ap/issues"
+  },
+  "homepage": "https://github.com/VictorGreiveldingerHub/T-ap#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "pg": "^8.6.0"
+  }
+}

@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+    <div class="game-solo">
+        <h2 class="welcome"><%= goodGame.title %></h2>
+        <p><%= goodGame.description %></p>
+        <p><%= goodGame.rule %></p>
+        <% for (let t of theme) { %>
+            <p class="game-theme-<%=t.title.toLowerCase()%>"><%= t.title %></p>
+        <% } %> 
+    </div>
+    
+<%- include('partials/footer') %>
