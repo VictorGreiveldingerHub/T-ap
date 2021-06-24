@@ -108,7 +108,27 @@ li {
 }
 
 /* JEU */
+.game-solo {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 30%;
+}
 
+.game-theme-rapidité {
+    color: #FE9D15;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 1em;
+    width: fit-content;
+}
+
+.game-theme-précision {
+    color: #18534F;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 1em;
+    width: fit-content;
+}
 
 /* Signup */
 .signup-form {

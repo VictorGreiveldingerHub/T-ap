@@ -4,7 +4,7 @@ const dataMapper = {
 
     // Cherche tous les jeux dans la table game
     getAllGames: (callback) => {
-        // Requete pour récup les figurines
+        // Requete pour récup les jeux
         const query = `SELECT * FROM "game"`;
 
         // Je lance la requete mais le callback je ne le définis pas dans dataMapper
@@ -59,7 +59,7 @@ const dataMapper = {
         const values = [gameId];
         
         client.query(query, values, callback);
-    }
+    },
 };
 
 module.exports = dataMapper;

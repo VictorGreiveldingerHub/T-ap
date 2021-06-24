@@ -1,4 +1,3 @@
-const { DatabaseError } = require('pg-protocol');
 const dataMapper = require('../dataMapper');
 
 const gameController = {
@@ -49,10 +48,10 @@ const gameController = {
                 // Je viens ensuite récupérer le titre du theme
                 dataMapper.getGameAndTheme(gameId, (err2, data2) => {
                     if(err2) {
-                        console.trace(err2);
+                        // console.trace(err2);
                         res.status(500).render('500', {err2});
                     } else {
-                        console.log(data2.rows);
+                        // console.log(data2.rows);
                         const goodGame = data.rows[0];
                         // Puis j'envoie à la view les bonnes informations !
                         res.render('game', {
@@ -63,8 +62,7 @@ const gameController = {
                 });
             };
         });
-        
-    } 
+    },
 };
 
 module.exports = gameController;
