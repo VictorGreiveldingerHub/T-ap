@@ -1,8 +1,10 @@
+// Avec le CoreModel, je commence par require la classe
 const CoreModel = require('./coreModel');
 
-// Avec la création du CoreModel,
+// Puis la classe User vient hériter du CoreModel
 class User extends CoreModel {
-    // Mise en place des propriétés pour chaque champ de la table correspondante.
+    // Plus besoin d'id, created_at et updated_at vu que les props
+    // sont présentes dans le CoreModel
     firstname;
     lastname;
     email;
@@ -11,9 +13,11 @@ class User extends CoreModel {
     avatar;
 
     constructor(obj) {
-        super(obj); // quand je vais construire un User, je vais d'abord construire un CoreModel en lui passant les valeurs (id, created_at, updated_at)
+        // je remplace this.id = obj.id etc ... 
+        // par super afin d'appeler ou d'accéder à des fonctions définies 
+        // sur l'objet parent, ici CoreModel.
+        super(obj);
         
-        // Puis je vais continuer le travail en prenant email, password etc ...
         this.email = obj.email;
         this.password = obj.password;
         this.firstname = obj.firstname;
@@ -23,4 +27,5 @@ class User extends CoreModel {
     };
 };
 
+// On export la classe !
 module.exports = User; 
