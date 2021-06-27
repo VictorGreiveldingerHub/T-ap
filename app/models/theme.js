@@ -23,7 +23,7 @@ class Theme extends CoreModel {
     /* Méthode Active Record */
     
     // Une méthode pour récupérer tous les themes d'un coup.
-    findAll(callback) {
+    static findAll(callback) {
         // Je crée une query
         const query = `SELECT * FROM "theme"`;
         
