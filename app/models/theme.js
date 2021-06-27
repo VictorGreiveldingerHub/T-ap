@@ -51,6 +51,34 @@ class Theme extends CoreModel {
     };
     
     // Une méthode pour récupérer un seul Theme, en utilisant son id.
+    // Je donne 2 paramètres, un id et le callback pour passer le résultat à la fonction suivante
+    static findById(id, callback) {
+        // construire une requête préparée avec le tableau de valeur
+        const query = `SELECT * FROM "theme" WHERE "id" = $1`;
+        
+        const values = [id];
+        
+        // lancer la requête
+        dbConnection.query(query, values, (err, data) => {
+            if (err) {
+                // Si il y a une erreur, je la donne au callback
+                callback(err, null);
+            } else {
+                // transformer le premier résultat en instance de Theme
+                const firstResult = data.rows[0];
+                // je vérifie que l'id existe
+                if (firstResult) {
+                    const newTheme = new Theme(firstResult);
+                    
+                    // passer le Theme au callback
+                    callback(null, newTheme);
+                } else {
+                    // si il n'y a pas de résultat, on renvoie undefined
+                    callback(null, undefined);
+                };
+            };
+        });
+    };
     
     // Une méthode pour insérer l'instance courante dans la BDD.
     
