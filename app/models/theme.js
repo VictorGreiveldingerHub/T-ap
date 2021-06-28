@@ -81,6 +81,33 @@ class Theme extends CoreModel {
     };
     
     // Une méthode pour insérer l'instance courante dans la BDD.
+    insert(callback) {
+        // Créer un query avec le tableau de valeur qui correspond
+        // PS : vu que dans ma BDD, l'id est un SERIAL, je ne suis pas forcé
+        // d'intégrer un id ici, tout comme created_at et updated_at !
+        const query = `INSERT INTO "theme"( "title" ) VALUES( $1 ) RETURNING id, created_at`;
+        
+        const values = [this.title];
+        
+        // lancer la query dans la BDD
+        // je fais un callback pour préciser ce qui s'est mal ou bien passé, parce que sinon
+        // je n'ai pas de retour
+        dbConnection.query(query, values, (err, data) => {
+            if (err) {
+                callback(err, null);
+            } else {
+                // Si l'insertion s'est bien passée, je récupère dans data.rows[0]
+                // les infos que j'ai demandé à la BDD grâce au RETURNING
+                const returnedInfos = data.rows[0];
+                // je veux mettre à jour l'instance qui appelle la méthode, donc this
+                this.id = returnedInfos.id;
+                this.created_at = returnedInfos.created_at;
+                
+                // puis je passe au callback la nouvelle version de l'instance courante
+                callback(null, this);
+            };
+        });
+    };
     
     // Une méthode pour mettre à jour l'instance courante dans la BDD.
     
