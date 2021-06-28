@@ -111,7 +111,16 @@ class Theme extends CoreModel {
     
     // Une méthode pour mettre à jour l'instance courante dans la BDD.
     
-    // Uné méthode pour supprimer l'instance courante.
+    // Une méthode pour supprimer l'instance courante.
+    delete (callback) {
+        // La requete pour supprimer un theme et le tableau de valeur
+        const query = `DELETE FROM "theme" WHERE "id" = $1`;
+        const values = [this.id];
+        
+        // ici, pour le callback, aucune transformation, pas de mise à jour,
+        // pas besoin d'information ... donc seulement callback.
+        dbConnection.query(query, values, callback);
+    };
 };
 
 module.exports = Theme; 
