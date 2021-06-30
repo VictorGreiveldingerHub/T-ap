@@ -31,6 +31,36 @@ class CoreModel {
             throw Error("Id must be an integer value.")
         }
     };
+    
+    // // Exemple pour this avec et sans static
+    // printThis () {
+    //     console.log(this);
+    // };
+    
+    // static printStaticThis () {
+    //   console.log(this);  
+    // }; 
+    
+    /* Méthodes Active Record */
+    
+    // Méthode pour récupérer les models de la BDD
+    static findAll (callback) {
+        const query = `SELECT * FROM "${this.tableName}"`;
+        
+        dbConnection.query(query, (err, data) => {
+            
+            if (err) {
+                callback(err, null);
+            } else {
+                const allModels = [];
+                for (let obj of data.rows) {
+                    const everyModels = new this(obj);
+                    allModels.push(everyModels);
+                };
+                callback(null, allModels);
+            };
+        });
+    };
 };
 
 // On export la classe !

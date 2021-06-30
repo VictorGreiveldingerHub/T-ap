@@ -4,6 +4,9 @@ const dbConnection = require('../dbConnection');
 
 // Puis la classe User vient hériter du CoreModel
 class User extends CoreModel {
+    
+    static tableName = "user";
+    
     // Plus besoin d'id, created_at et updated_at vu que les props
     // sont présentes dans le CoreModel
     firstname;

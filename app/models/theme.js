@@ -4,6 +4,8 @@ const dbConnection = require('../dbConnection');
 
 class Theme extends CoreModel {
 
+    static tableName = "theme";
+    
     title;
     color;
 

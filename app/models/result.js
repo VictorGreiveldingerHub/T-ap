@@ -2,6 +2,8 @@ const CoreModel = require('./coreModel');
 
 class Result extends CoreModel {
 
+    static tableName = "result";
+    
     game_title;
     date;
     point;

@@ -2,6 +2,8 @@ const CoreModel = require('./coreModel');
 
 class Difficulty extends CoreModel {
 
+    static tableName = "difficulty";
+    
     title;
     color;
     coefficient;

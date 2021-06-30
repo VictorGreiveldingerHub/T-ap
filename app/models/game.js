@@ -2,6 +2,8 @@ const CoreModel = require('./coreModel');
 
 class Game extends CoreModel {
     
+    static tableName = "game";
+    
     title;
     category;
     description;
