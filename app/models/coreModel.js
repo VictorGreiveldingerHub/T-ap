@@ -1,5 +1,6 @@
 // Vu que les propriétés id, created_at et updated_at sont présentent dans toutes les classes, au lieu de se répéter
 // on vient coder un CoreModel avec l'héritage pour la factorisation.
+const dbConnection = require('../dbConnection');
 
 // Toutes les classes vont donc hériter de CoreModel
 class CoreModel {
@@ -60,6 +61,35 @@ class CoreModel {
                 callback(null, allModels);
             };
         });
+    };
+    
+    // Méthode pour récupérer 1 seul modèle grâce à son id
+    static findById (id, callback) {
+        const query = `SELECT * FROM "${this.tableName}" WHERE "id" = $1`;
+        const values = [id];
+        
+        dbConnection.query(query, values, (err, data) => {
+            if (err) {
+                callback(err, null);
+            } else {
+                const firstResult = data.rows[0];
+                if (firstResult) {
+                    // on peut faire const oneResult = new this(firstResult),
+                    // puis passer oneResult en paramètre du callback aussi.
+                    callback(null, new this(firstResult))
+                } else {
+                    callback(null, undefined);
+                };
+            };
+        });
+    };
+    
+    // une méthode pour supprimer l'instance courante de la BDD
+    delete(callback) {
+        const query = `DELETE FROM "${this.constructor.tableName}" WHERE "id" = $1`;
+        const values = [this.id];
+        
+        dbConnection.query(query, values, callback);
     };
 };
 

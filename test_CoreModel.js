@@ -9,16 +9,31 @@ require('dotenv').config();
 
 // CoreModel.printStaticThis();
 
-// Test findAll CoreModel
-// Pour Theme
-const Theme = require('./app/models/theme');
-Theme.findAll((err, themes) => {
-    if (err) { return console.log(err); };
-    console.log(themes);
-});
-// Pour User
+// // Test findAll CoreModel
+// // Pour Theme
+// const Result = require('./app/models/result');
+// Result.findAll((err, results) => {
+//     if (err) { return console.log(err); };
+//     console.log(results);
+// });
+// // Pour Difficulty
+// const Difficulty = require('./app/models/difficulty');
+// Difficulty.findAll((err, difficulties) => {
+//     if (err) { return console.log(err); };
+//     console.log(difficulties);
+// });
+
+// // test findById CoreModel
+// // Pour result
+// const Result = require('./app/models/result');
+// Result.findById(3, (err, result) => {
+//     if (err) { return console.log(err); };
+//     console.log(result);
+//     console.log(result.constructor);
+// }); 
+
 const User = require('./app/models/user');
-User.findAll((err, users) => {
+User.findById(8, (err, user) => {
     if (err) { return console.log(err); };
-    console.log(users);
+    user.delete();
 });
