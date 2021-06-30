@@ -33,7 +33,20 @@ require('dotenv').config();
 // }); 
 
 const User = require('./app/models/user');
-User.findById(8, (err, user) => {
-    if (err) { return console.log(err); };
-    user.delete();
+// User.findById(8, (err, user) => {
+//     if (err) { return console.log(err); };
+//     user.delete();
+// });
+
+// const Difficulty = require('./app/models/difficulty');
+// const newDifficulty = new Difficulty({ title: "Extrême", color: "#123445", coefficient: 8});
+// newDifficulty.insert((err, newDifficulty) => {
+//     if (err) {return console.log(err); };
+//     console.log(newDifficulty);
+// });
+
+const Theme = require('./app/models/theme');
+Theme.findById(7, (err, theme) => {
+    if (err) {return console.log(err); };
+    theme.delete();
 });

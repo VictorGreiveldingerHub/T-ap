@@ -91,6 +91,47 @@ class CoreModel {
         
         dbConnection.query(query, values, callback);
     };
+    
+    // méthode pour insert l'instance courante
+    insert (callback) {
+        const tableStruct = [];
+        const values = [];
+        const dollars = [];
+        
+        let indexDollar = 1;
+        for (let prop in this) {
+            if (prop != "id" && prop != "created_at" && prop != "updated_at") {
+                tableStruct.push(prop);
+                values.push(this[prop]);
+                dollars.push("$"+ indexDollar);
+                indexDollar++;
+            }; 
+        };
+        
+        // console.log(tableStruct);
+        // console.log(values);
+        // console.log(dollars);
+        const query = `INSERT INTO "${this.constructor.tableName}"
+            (${tableStruct})
+            VALUES (${dollars})
+            RETURNING id, created_at
+        `;
+        
+        // console.log(query);
+        
+        dbConnection.query(query, values, (err, data) => {
+            if (err) {
+                callback(err, null);
+            } else {
+                const returnedInfos = data.rows[0];
+                
+                this.id = returnedInfos.id;
+                this.created_at = returnedInfos.created_at;
+                
+                callback(null, this);
+            };
+        });
+    };
 };
 
 // On export la classe !
