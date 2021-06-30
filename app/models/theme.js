@@ -110,6 +110,30 @@ class Theme extends CoreModel {
     };
     
     // Une méthode pour mettre à jour l'instance courante dans la BDD.
+    update (callback) {
+        // la requete SQL "UPDATE" en utilisant les données de this, et le tableau de values
+        const query = `UPDATE "theme" SET
+            title = $1,
+            color = $2,
+            updated_at = CURRENT_TIMESTAMP
+            WHERE "id" = $3
+            RETURNING updated_at
+        `;
+        const values = [this.title, this.color, this.id];
+        
+        // lancer la requête
+        dbConnection.query(query, values, (err, data) => {
+            if (err) {
+                callback(err, null);
+            } else {
+                const returnedInfos = data.rows[0];
+                
+                this.updated_at = returnedInfos.updated_at;
+                
+                callback(null, this)
+            };
+        });
+    };
     
     // Une méthode pour supprimer l'instance courante.
     delete (callback) {
