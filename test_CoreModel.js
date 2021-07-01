@@ -90,4 +90,4 @@ const Difficulty = require('./app/models/difficulty');
 // });
 
 // test méthode findBy
-Difficulty.findBy({title: "Débutant"}, console.log);
+Difficulty.findBy({}, console.log);

@@ -190,7 +190,7 @@ class CoreModel {
     
     // Une méthode pour trouver des instances en fonction de paramètre non définis à l'avance
     static findBy (params, callback) {
-        const tableStruct = [];
+        const tableStruct = ['1=1'];
         const values = [];
         let indexDollar = 1;
         
@@ -201,7 +201,7 @@ class CoreModel {
             indexDollar++;
         };
         
-        const query = `SELECT * FROM ${this.tableName} WHERE ${tableStruct.join(" AND ")}`;
+        const query = `SELECT * FROM "${this.tableName}" WHERE ${tableStruct.join(" AND ")}`;
         
         dbConnection.query(query, values, (err, data) => {
             
