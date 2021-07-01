@@ -132,6 +132,91 @@ class CoreModel {
             };
         });
     };
+    
+    // Méthode update de l'instance courante
+    update (callback) {
+        // je prépare les différents tableaux,
+        const tableStruct = [];
+        const values = [];
+        
+        let indexDollars = 1;
+        // Pour chaque prop de l'objet ...
+        for (let prop in this) {
+            if (prop != "id" && prop != "created_at" && prop != "updated_at") {
+                const string = ` "${prop}" = $${indexDollars}`;
+                indexDollars++;
+                tableStruct.push(string);
+                values.push(this[prop]);
+            };
+        };
+        // je rajoute à la fin la prop "updated_at" qui est toujours la même
+        tableStruct.push(` "updated_at" = CURRENT_TIMESTAMP`);
+        console.log(tableStruct);
+        console.log(values);
+
+        // Quelques heures pour comprendre ce probleme
+        // error: bind message supplies 6 parameters, but prepared statement "" requires 7
+        
+        // Comme le dernier dollar sert à spécifier l'id de l'objet a update, je dois l'ajouter dans le tableau de valeur ... 
+        values.push(this.id);
+        
+        const query = `UPDATE "${this.constructor.tableName}" SET ${tableStruct} WHERE "id" = $${indexDollars} RETURNING updated_at`;
+        
+        // console.log(query);
+          
+        // lancer la requête
+        dbConnection.query(query, values, (err, data) => {
+            if (err) {
+                callback(err, null);
+            } else {
+                const returnedInfos = data.rows[0];
+                
+                this.updated_at = returnedInfos.updated_at;
+                
+                callback(null, this)
+            };
+        });
+    };
+    
+    // Petite fonction utilitaire pour soit insert dans la BDD, soit update 
+    save(callback) {
+        // Si l'instance existe dans la BDD, elle a forcement un id,
+        if (this.id) {
+            this.update(callback);
+        } else {
+            this.insert(callback);
+        };
+    };
+    
+    // Une méthode pour trouver des instances en fonction de paramètre non définis à l'avance
+    static findBy (params, callback) {
+        const tableStruct = [];
+        const values = [];
+        let indexDollar = 1;
+        
+        for (let prop in params) {
+            let conditions = ` "${prop}" = $${indexDollar}`;
+            tableStruct.push(conditions);
+            values.push(params[prop]);
+            indexDollar++;
+        };
+        
+        const query = `SELECT * FROM ${this.tableName} WHERE ${tableStruct.join(" AND ")}`;
+        
+        dbConnection.query(query, values, (err, data) => {
+            
+            if (err) {
+                callback(err, null);
+            } else {
+                const allModels = [];
+                for (let obj of data.rows) {
+                    const everyModels = new this(obj);
+                    allModels.push(everyModels);
+                };
+                callback(null, allModels);
+            };
+        });
+    };
 };
 
 // On export la classe !
