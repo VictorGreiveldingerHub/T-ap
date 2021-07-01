@@ -1,20 +1,26 @@
-const CoreModel = require('./coreModel');
+const { Model, DataTypes } = require('sequelize');
+const dbConnection = require('../dbConnection');
 
-class Difficulty extends CoreModel {
+class Difficulty extends Model {};
 
-    static tableName = "difficulty";
-    
-    title;
-    color;
-    coefficient;
-
-    constructor(obj) {
-        super(obj);
-        
-        this.title = obj.title;
-        this.color = obj.color;
-        this.coefficient = obj.coefficient;
-    };
-};
+Difficulty.init({
+    title: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    color: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    coefficient: {
+        type: DataTypes.REAL,
+        allowNull: false
+    },
+}, {
+    sequelize: dbConnection,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    tableName: "difficulty"
+});
 
 module.exports = Difficulty; 

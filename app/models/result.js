@@ -1,24 +1,30 @@
-const CoreModel = require('./coreModel');
+const { Model, DataTypes } = require('sequelize');
+const dbConnection = require('../dbConnection');
 
-class Result extends CoreModel {
+class Result extends Model {
 
-    static tableName = "result";
-    
-    game_title;
-    date;
-    point;
-    game_id;
-    user_id;
-
-    constructor(obj) {
-        super(obj);
-        
-        this.game_title = obj.game_title;
-        this.date = obj.date;
-        this.point = obj.point;
-        this.game_id = obj.game_id;
-        this.user_id = obj.user_id;
-    };
 };
+
+Result.init({
+    game_title: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    date: DataTypes.DATE,
+    point: DataTypes.INTEGER,
+    game_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
+}, {
+    sequelize: dbConnection,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    tableName: "result"
+});
 
 module.exports = Result; 

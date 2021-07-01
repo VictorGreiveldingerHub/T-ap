@@ -1,35 +1,41 @@
-// Avec le CoreModel, je commence par require la classe
-const CoreModel = require('./coreModel');
-// const dbConnection = require('../dbConnection');
+const dbConnection = require('../dbConnection');
+const { Model, DataTypes } = require('sequelize');
 
-// Puis la classe User vient hériter du CoreModel
-class User extends CoreModel {
-    
-    static tableName = "user";
-    
-    // Plus besoin d'id, created_at et updated_at vu que les props
-    // sont présentes dans le CoreModel
-    firstname;
-    lastname;
-    email;
-    password;
-    role;
-    avatar;
+class User extends Model {
 
-    constructor(obj) {
-        // je remplace this.id = obj.id etc ... 
-        // par super afin d'appeler ou d'accéder à des fonctions définies 
-        // sur l'objet parent, ici CoreModel.
-        super(obj);
-        
-        this.email = obj.email;
-        this.password = obj.password;
-        this.firstname = obj.firstname;
-        this.lastname = obj.lastname;
-        this.role = obj.role;
-        this.avatar = obj.avatar;
+    getFullName() {
+        return this.firstname + " " + this.lastname;
     };
 };
+
+User.init({
+    firstname: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    lastname: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    password: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    role: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    avatar: DataTypes.TEXT
+}, {
+    sequelize: dbConnection,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    tableName: "user"
+});
 
 // On export la classe !
 module.exports = User; 
