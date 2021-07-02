@@ -8,13 +8,15 @@
     <div class="games">
         <% for (let game of games) { %>
             <div class="game">
-                <a href="/gameList/<%=game.id%>"><h3><%= game.title %></h3></a>
-                <section class="description-section">
-                    <span><%= game.description %></span>
-                    <% for (let theme of game.gameTheme) { %>
-                        <p><%= theme.getName() %></p>
-                    <% } %>
-                </section>
+                <a href="/gameList/<%=game.id%>">
+                    <h3><%= game.title %></h3>
+                    <section class="description-section">
+                        <span><%= game.description %></span>
+                        <% for (let theme of game.gameTheme) { %>
+                            <p><%= theme.getName() %></p>
+                        <% } %>
+                    </section>
+                </a>
             </div>
         <% } %>
     </div>

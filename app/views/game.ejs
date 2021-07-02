@@ -2,12 +2,21 @@
 <%- include('partials/nav') %>
 
     <div class="game-solo">
-        <h2 class="welcome"><%= goodGame.title %></h2>
-        <p><%= goodGame.description %></p>
-        <p><%= goodGame.rule %></p>
-        <% for (let t of theme) { %>
-            <p class="game-theme-<%=t.title.toLowerCase()%>"><%= t.title %></p>
-        <% } %> 
+        <h2 class="welcome"><%= game.title %></h2>
+        <p><%= game.description %></p>
+        <p><%= game.rule %></p>
+        <h4>Niveau de difficulté possible :</h4>
+        <% for (let difficulty of game.gameDifficulties) { %>
+            <ul>
+                <li>
+                    <span><%= difficulty.title %></span>
+                    <p>
+                        Avec ce niveau de difficulté, multiplie ton score par <%= difficulty.coefficient %> !
+                    </p>
+                    <a href="#"><button type="button">Jouer</button></a>
+                </li>
+            </ul>
+        <% } %>
     </div>
     
 <%- include('partials/footer') %>

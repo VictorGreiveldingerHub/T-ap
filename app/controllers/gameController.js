@@ -1,6 +1,4 @@
-// const dataMapper = require('../dataMapper');
 const { Game } = require('../models/associations');
-const { associations } = require('../models/result');
 
 const gameController = {
     
@@ -38,22 +36,30 @@ const gameController = {
         });
     },
     
-    // getOneGame: (req, res) => {
-    //     // Pour récupérer le bon jeu
-    //     const gameId = req.params.id;
+    getOneGame: (req, res, next) => {
+        // Pour récupérer le bon jeu
+        const gameId = req.params.id;
         
-    //     dataMapper.getOneGame(gameId, (err, data) => {
-    //         if (err) {
-    //             console.trace(err);
-    //             res.status(500).render('500', {err});
-    //         } else {
-    //             const goodGame = data.rows[0];
-    //             res.render('game', {
-    //                 goodGame,
-    //             });
-    //         };
-    //     });
-    // },
+        Game.findByPk(gameId, {
+            include: [
+                "gameDifficulties"
+            ]
+        }).then((game) => {
+            // Si l'id demandé n'existe pas dans la BDD, cela renvoie "null"
+            if (! game) {
+                // si je n'ai pas de jeu correspondant, je passe à next(),
+                // qui va renvoyer la page 404 !
+                next();
+            } else {
+                res.render('game', {
+                    game
+                });
+            };
+        }).catch((err) => {
+            console.trace(err);
+            res.status(500).render('500', {err});
+        });
+    },
     
     // // Récupérer l'id d'un jeu et le(s) theme(s) associés
     // getOneGameAndTheme: (req, res) => {

@@ -5,6 +5,7 @@ const mainController = require('./controllers/mainController');
 const gameController = require('./controllers/gameController');
 const progressionController = require('./controllers/progressionController');
 const authController = require('./controllers/authController');
+const themesController = require('./controllers/themesController');
 
 
 const router = express.Router();
@@ -14,7 +15,10 @@ router.get('/', mainController.homePage);
 
 // page des jeux
 router.get('/gameList', gameController.gamePage);
-// router.get('/gameList/:id', gameController.getOneGameAndTheme);
+router.get('/gameList/:id', gameController.getOneGame);
+
+// page des thèmes
+router.get('/themes', themesController.themesPage);
 
 // page progression => récupérer les résultats d'un user
 router.get('/progression', progressionController.progresPage);
