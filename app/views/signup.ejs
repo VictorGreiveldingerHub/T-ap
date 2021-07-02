@@ -2,13 +2,6 @@
 <%- include('partials/nav') %>
     
     <div>
-        <div>
-            <% if (locals.error) { %>
-                <div>
-                    <%= error %>
-                </div>
-            <% } %>
-        </div>
         <form method="POST" action="/signup" class="signup-form">
             <div class="informations">
                 <label>Prénom :</label>

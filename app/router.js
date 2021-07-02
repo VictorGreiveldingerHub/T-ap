@@ -29,8 +29,12 @@ router.get('/progression', progressionController.progresPage);
 
 
 // page se connecter
-//router.get('/login', authController.loginPage);
-//router.post('/login', authController.loginAction);
+router.get('/login', authController.loginPage);
+// router.post('/login', authController.loginAction);
+
+// page s'inscrire
+router.get('/signup', authController.signupPage);
+// router.post('/signup', authController.signupAction);
 
 // Page pour se déconnecter de la session
 // router.get('/logout', authController.logout);
@@ -38,9 +42,6 @@ router.get('/progression', progressionController.progresPage);
 // page profil
 // router.get('/profile', userController.getProfil);
 
-// // page s'inscrire
-// router.get('/signup', authController.signupPage);
-// router.post('/signup', authController.signupAction);
 
 
 // pour supprimer un utilisateur de la BDD
