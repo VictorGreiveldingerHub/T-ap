@@ -1,19 +1,19 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 
-<section class="game-section">
+<section>
     <div>
-        <h2 class="welcome"> Liste des jeux </h2>
+        <h2 class="welcome"> Liste des jeux du thème : <%= theme.title %> </h2>
     </div>
     <div class="games">
-        <% for (let game of games) { %>
+        <% for (let game of theme.themes) { %>
             <div class="game">
                 <a href="/gameList/<%=game.id%>">
                     <h3><%= game.title %></h3>
                     <section class="description-section">
                         <span><%= game.description %></span>
                         <% for (let theme of game.gameTheme) { %>
-                            <a href="/themes/<%= theme.id %>"><p><%= theme.getName() %></p></a>
+                            <p><%= theme.getName() %></p>
                         <% } %>
                     </section>
                 </a>

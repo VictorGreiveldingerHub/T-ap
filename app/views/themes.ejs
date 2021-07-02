@@ -5,7 +5,7 @@
 <div class="row">
     <% for (let theme of themes) { %>
         <div class="theme themes--<%= theme.title.toLowerCase() %>">
-            <%= theme.title %>
+            <a href="/themes/<%= theme.id %>"><%= theme.title %></a>
         </div>
     <% } %>
 </div>

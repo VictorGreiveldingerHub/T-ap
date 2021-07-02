@@ -19,6 +19,7 @@ router.get('/gameList/:id', gameController.getOneGame);
 
 // page des thèmes
 router.get('/themes', themesController.themesPage);
+router.get('/themes/:id', themesController.pageGameByTheme);
 
 // page progression => récupérer les résultats d'un user
 router.get('/progression', progressionController.progresPage);
