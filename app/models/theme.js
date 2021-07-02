@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 class Theme extends Sequelize.Model {
 
     getName() {
-        return "Je suis le theme" + this.title;
+        return "Thème : " + this.title;
     };
 };
 

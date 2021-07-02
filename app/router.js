@@ -14,7 +14,7 @@ router.get('/', mainController.homePage);
 
 // page des jeux
 router.get('/gameList', gameController.gamePage);
-router.get('/gameList/:id', gameController.getOneGameAndTheme);
+// router.get('/gameList/:id', gameController.getOneGameAndTheme);
 
 // page progression => récupérer les résultats d'un user
 router.get('/progression', progressionController.progresPage);
@@ -24,22 +24,22 @@ router.get('/progression', progressionController.progresPage);
 
 
 // page se connecter
-router.get('/login', authController.loginPage);
-router.post('/login', authController.loginAction);
+//router.get('/login', authController.loginPage);
+//router.post('/login', authController.loginAction);
 
 // Page pour se déconnecter de la session
-router.get('/logout', authController.logout);
+// router.get('/logout', authController.logout);
 
 // page profil
 // router.get('/profile', userController.getProfil);
 
-// page s'inscrire
-router.get('/signup', authController.signupPage);
-router.post('/signup', authController.signupAction);
+// // page s'inscrire
+// router.get('/signup', authController.signupPage);
+// router.post('/signup', authController.signupAction);
 
 
 // pour supprimer un utilisateur de la BDD
-router.get('/route/pour/delete/user/:id', authController.deleteUser);
+//router.get('/route/pour/delete/user/:id', authController.deleteUser);
 
 // Pour gérer les 404
 router.use((req, res) => {res.status(404).render('404')});
