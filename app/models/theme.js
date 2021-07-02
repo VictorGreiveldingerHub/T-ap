@@ -16,7 +16,8 @@ Theme.init({
     },
     color: {
         type: Sequelize.TEXT,
-        allowNull: false
+        allowNull: false,
+        defaultValue: '#000'
     }
 }, {
     sequelize: dbConnection,

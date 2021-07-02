@@ -10,7 +10,8 @@ Difficulty.init({
     },
     color: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
+        defaultValue: '#000'
     },
     coefficient: {
         type: DataTypes.REAL,

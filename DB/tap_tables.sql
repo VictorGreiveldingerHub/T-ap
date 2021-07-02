@@ -13,7 +13,7 @@ CREATE TABLE "user" (
     "lastname" TEXT NOT NULL,
     "email" TEXT NOT NULL, -- Erata username => email
     "password" TEXT NOT NULL,
-    "role" TEXT NOT NULL DEFAULT 'User',
+    "role" TEXT NOT NULL DEFAULT 'user',
     "avatar" TEXT, -- on laisse la possibilité à l'utilisateur de ne pas choisir d'avatar
     "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP NULL
@@ -45,8 +45,8 @@ CREATE TABLE "result" (
     "game_title" TEXT NOT NULL,
     "date" DATE,
     "point" INT,
-    "game_id" INT NOT NULL,
-    "user_id" INT NOT NULL,
+    "game_id" INT NOT NULL REFERENCES "game"("id"),
+    "user_id" INT NOT NULL REFERENCES "user"("id"),
     "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP NULL
 );

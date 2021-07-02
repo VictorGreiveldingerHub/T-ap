@@ -12,7 +12,8 @@ Game.init({
     description: DataTypes.TEXT,
     color: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
+        defaultValue: '#000'
     },
     rule: {
         type: DataTypes.TEXT,

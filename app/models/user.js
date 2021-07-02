@@ -1,6 +1,9 @@
 const dbConnection = require('../dbConnection');
 const { Model, DataTypes } = require('sequelize');
 
+// Require d'autres modèles pour les associations
+const Result = require('./result');
+
 class User extends Model {
 
     getFullName() {
@@ -19,7 +22,8 @@ User.init({
     },
     email: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     password: {
         type: DataTypes.TEXT,
@@ -27,7 +31,8 @@ User.init({
     },
     role: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'user'
     },
     avatar: DataTypes.TEXT
 }, {
