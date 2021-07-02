@@ -14,11 +14,44 @@ const authController = {
     },
     
     // Traiter le formulaire de connexion
-    loginAction: (req, res) => {},
+    loginAction: (req, res) => {
+        // récupérer les infos du form
+        const {email, password} = req.body;
+        
+        // tenter de récupérer l'utilisateur via l'email donné
+        User.findOne({
+            where: {
+                email
+            }
+        }).then((user) => {
+            // erreur si il n'existe pas
+            if (!user) {
+                return res.render('login', {
+                    error: "Cet email n'existe pas"
+                });
+            };
+            
+            // si il existe, vérification du mot de passe
+            if (!bcrypt.compareSync(password, user.password )) {
+                return res.render('/login', {
+                    error: "Mauvais mot de passe"
+                });
+            };
+            
+            // Si out est bon, on le met en session
+            req.session.user = user;
+            res.redirect('/');
+            
+        }).catch((err) => {
+            console.trace(err);
+            res.status(500).render('500', {err});
+        });
+        
+    },
     
     // Méthode pour se déconnecter de la session 
     logout: (req, res) => {
-        delete req.session.username; // c'est l'équivalent de `req.session.username = undefined;`
+        delete req.session.user; // c'est l'équivalent de `req.session.user = undefined;`
 
         //et hop, on redirige
         res.redirect('/');
@@ -94,7 +127,13 @@ const authController = {
                 
                 newUser.save().then((user) => {
                     // Une fois que tout est bon, je redirige vers /login
-                    res.redirect('/login');
+                    // res.redirect('/login');
+                    
+                    // Au lieu de rediriger vers le login, je vais directement mettre 
+                    // l'utilisateur en session.
+                    req.session.user = user;
+                    res.redirect('/');
+                    
                 }).catch((err) => {
                     console.trace(err);
                     res.status(500).render('500', {err});
