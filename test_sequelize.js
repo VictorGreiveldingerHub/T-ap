@@ -42,12 +42,33 @@ require('dotenv').config();
 //     console.log(err);
 // });
 
-const { User, Result } = require('./app/models/associations');
+const { User, Result, Game } = require('./app/models/associations');
 
-Result.findAll({
-    where: {
-        user_id: 2
-    }
-}).then((user) => {
-    console.log(user);
-}).catch(console.log);
+// User.findAll({
+//     where: {
+//         id: 2
+//     },
+//     include: [
+//         "ownResults"
+//     ]
+// }).then((user) => {
+//     console.log(user);
+// }).catch(console.log);
+
+// Game.findByPk(1, {
+//     include: [
+//         "gameTheme",
+//         "ownGameResult"
+//     ]
+// }).then((game) => {
+//     console.log(game);
+// }).catch(console.log);
+
+// Je veux récupérer les thèmes associés au jeu dont l'id est 2
+Game.findByPk(2, {
+    include: [
+        "gameTheme"
+    ]
+}).then((game) => {
+    console.log(game.gameTheme);
+}).catch(console.error);
