@@ -34,10 +34,10 @@ router.get('/login', authController.loginPage);
 
 // page s'inscrire
 router.get('/signup', authController.signupPage);
-// router.post('/signup', authController.signupAction);
+router.post('/signup', authController.signupAction);
 
 // Page pour se déconnecter de la session
-// router.get('/logout', authController.logout);
+router.get('/logout', authController.logout);
 
 // page profil
 // router.get('/profile', userController.getProfil);

@@ -2,6 +2,13 @@
 <%- include('partials/nav') %>
     
     <div>
+        <% if (locals.errorList) { %>
+            <% for (let error of errorList) { %>
+                <div class="error">
+                    <%= error %>
+                </div>
+            <% } %>
+        <% } %>
         <form method="POST" action="/signup" class="signup-form">
             <div class="informations">
                 <label>Prénom :</label>
