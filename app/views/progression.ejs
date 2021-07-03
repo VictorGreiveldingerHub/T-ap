@@ -1,7 +1,11 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 
-    <h2>Hello <%= username %></h2>
-    <p>Progression pour tous les jeux</p>
+    <h3 class="title-forms">Progression pour tous les jeux</h3>
+    
+    <% for (let result of results) { %>
+        <div>Pour le jeu : <%= result.game_title %></div>
+        <div>Score : <%= result.point %></div>
+    <% } %>
     
 <%- include('partials/footer') %>

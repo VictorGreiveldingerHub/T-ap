@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<section>
+    <div>
+        <h2 class="welcome"> Liste des jeux du thème : <%= theme.title %> </h2>
+    </div>
+    <div class="games">
+        <% for (let game of theme.themes) { %>
+            <div class="game">
+                <a href="/gameList/<%=game.id%>">
+                    <h3><%= game.title %></h3>
+                    <section class="description-section">
+                        <span><%= game.description %></span>
+                    </section>
+                </a>
+            </div>
+        <% } %>
+    </div>
+</section>
+    
+<%- include('partials/footer') %>

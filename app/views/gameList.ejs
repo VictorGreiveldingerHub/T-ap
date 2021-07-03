@@ -8,7 +8,12 @@
     <div class="games">
         <% for (let game of games) { %>
             <div class="game">
-                <a href="/gameList/<%=game.id%>"><h3><%= game.title %></h3></a>
+                <% for (let theme of game.gameTheme) { %>
+                    <a href="/themes/<%= theme.id %>" class="theme--<%= theme.title.toLowerCase() %>"><p><%= theme.getName() %></p></a>
+                <% } %>
+                <a href="/gameList/<%=game.id%>">
+                    <h3><%= game.title %></h3>
+                </a>
                 <section class="description-section">
                     <span><%= game.description %></span>
                 </section>
