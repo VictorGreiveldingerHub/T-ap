@@ -28,8 +28,8 @@ router.get('/themes', themesController.themesPage);
 router.get('/themes/:id', themesController.pageGameByTheme);
 
 // page progression => récupérer les résultats d'un user
-router.get('/progression/:id', userConnectedMD, progressionController.progresPage);
 router.get('/progression', userConnectedMD, progressionController.progresPage);
+router.get('/progression/:id', userConnectedMD, progressionController.progresPage);
 
 // // page progression => récupérer les résultats d'un jeu
 // router.get('/progression/game/:id', progressionController.progresPageByGame);
