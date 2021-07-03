@@ -26,6 +26,14 @@
                 Progression
             </a>
         </li>
+        <% if (locals.user.role === 'admin') { %>
+            <li>
+                <a href="/admin">
+                    <i></i>
+                    Admin
+                </a>
+            </li>
+        <% } %>
         <% if (locals.user) { %>
         <li>
             <a href="/profile">

@@ -7,9 +7,12 @@ const progressionController = require('./controllers/progressionController');
 const authController = require('./controllers/authController');
 const themesController = require('./controllers/themesController');
 const userController = require('./controllers/userController');
+const adminController = require('./controllers/adminController');
 
 // Middleware
 const userConnectedMD = require('./middlewares/userConnectedMD');
+// Pour voir si l'utilisateur est un admin ou pas
+const userRoleMD = require('./middlewares/userRoleMD');
 
 const router = express.Router();
 
@@ -30,6 +33,9 @@ router.get('/progression', userConnectedMD, progressionController.progresPage);
 
 // // page progression => récupérer les résultats d'un jeu
 // router.get('/progression/game/:id', progressionController.progresPageByGame);
+
+// page admin
+router.get('/admin', userConnectedMD, userRoleMD, adminController.adminPage);
 
 // page se connecter
 router.get('/login', authController.loginPage);
