@@ -1,13 +1,15 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 
-<h3>Liste des thèmes :</h3>
-<div class="row">
-    <% for (let theme of themes) { %>
-        <div class="theme themes--<%= theme.title.toLowerCase() %>">
-            <a href="/themes/<%= theme.id %>"><%= theme.title %></a>
-        </div>
-    <% } %>
+<div class="theme-section">
+    <h3 class="title-forms">Liste des thèmes :</h3>
+    <div class="row">
+        <% for (let theme of themes) { %>
+            <div class="theme themes--<%= theme.title.toLowerCase() %>">
+                <a href="/themes/<%= theme.id %>" class="theme--<%= theme.title.toLowerCase() %>" id="themeList"><%= theme.title %></a>
+            </div>
+        <% } %>
+    </div>
 </div>
     
 <%- include('partials/footer') %>

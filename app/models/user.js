@@ -1,9 +1,6 @@
 const dbConnection = require('../dbConnection');
 const { Model, DataTypes } = require('sequelize');
 
-// Require d'autres modèles pour les associations
-const Result = require('./result');
-
 class User extends Model {
 
     getFullName() {

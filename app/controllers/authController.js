@@ -33,7 +33,7 @@ const authController = {
             
             // si il existe, vérification du mot de passe
             if (!bcrypt.compareSync(password, user.password )) {
-                return res.render('/login', {
+                return res.render('login', {
                     error: "Mauvais mot de passe"
                 });
             };
@@ -132,6 +132,7 @@ const authController = {
                     // Au lieu de rediriger vers le login, je vais directement mettre 
                     // l'utilisateur en session.
                     req.session.user = user;
+                    
                     res.redirect('/');
                     
                 }).catch((err) => {

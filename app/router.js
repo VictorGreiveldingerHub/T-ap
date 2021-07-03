@@ -6,7 +6,7 @@ const gameController = require('./controllers/gameController');
 const progressionController = require('./controllers/progressionController');
 const authController = require('./controllers/authController');
 const themesController = require('./controllers/themesController');
-
+const userController = require('./controllers/userController');
 
 const router = express.Router();
 
@@ -21,12 +21,11 @@ router.get('/gameList/:id', gameController.getOneGame);
 router.get('/themes', themesController.themesPage);
 router.get('/themes/:id', themesController.pageGameByTheme);
 
-// // page progression => récupérer les résultats d'un user
-// router.get('/progression', progressionController.progresPage);
+// page progression => récupérer les résultats d'un user
+router.get('/progression/:id', progressionController.progresPage);
 
 // // page progression => récupérer les résultats d'un jeu
 // router.get('/progression/game/:id', progressionController.progresPageByGame);
-
 
 // page se connecter
 router.get('/login', authController.loginPage);
@@ -40,7 +39,7 @@ router.post('/signup', authController.signupAction);
 router.get('/logout', authController.logout);
 
 // page profil
-// router.get('/profile', userController.getProfil);
+router.get('/profile', userController.getProfil);
 
 // pour supprimer un utilisateur de la BDD
 //router.get('/route/pour/delete/user/:id', authController.deleteUser);

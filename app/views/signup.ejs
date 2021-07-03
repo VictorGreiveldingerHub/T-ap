@@ -3,12 +3,13 @@
     
     <div>
         <% if (locals.errorList) { %>
-            <% for (let error of errorList) { %>
-                <div class="error">
-                    <%= error %>
-                </div>
-            <% } %>
+            <ul class="errorList">
+                <% for (let error of errorList) { %>
+                    <li class="error"><%= error %></li>
+                <% } %>
+            </ul>
         <% } %>
+        <h2 class="title-forms">S'inscrire</h2>
         <form method="POST" action="/signup" class="signup-form">
             <div class="informations">
                 <label>Prénom :</label>
@@ -30,7 +31,7 @@
                 <label>Confirmation du password :</label>
                 <input type="password" name="password-confirm" id="input-password-confirm"/>
             </div>
-            <input class="informations" id="signup" type="submit" value="S'inscire" />
+            <input class="informations" id="signup" type="submit" value="S'inscrire" />
         </form>
     </div>
 

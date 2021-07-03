@@ -17,6 +17,14 @@
                 </li>
             </ul>
         <% } %>
+        <h5>Résultats pour le jeu : <%= game.title %></h5>
+        <ul>
+            <% for (let result of game.gameResult) { %>
+                <li>
+                    <span><%= result.point %> points, le <%= result.created_at%></span>
+                </li>
+            <% } %>
+        </ul>
     </div>
     
 <%- include('partials/footer') %>

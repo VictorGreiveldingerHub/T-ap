@@ -42,7 +42,8 @@ const gameController = {
         
         Game.findByPk(gameId, {
             include: [
-                "gameDifficulties"
+                "gameDifficulties",
+                "gameResult"
             ]
         }).then((game) => {
             // Si l'id demandé n'existe pas dans la BDD, cela renvoie "null"
