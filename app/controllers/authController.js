@@ -111,7 +111,6 @@ const authController = {
                 errorList.push("Le mot de passe et la confirmation doivent être les mêmes");
             };
             
-            // si on a au moins une erreur, reaffiche le form avec les erreurs
             
             // Si tout est ok, insérer les données en BDD,
             
@@ -140,6 +139,7 @@ const authController = {
                     res.status(500).render('500', {err});
                 });
             } else {
+                // si on a au moins une erreur, reaffiche le form avec les erreurs
                 res.render('signup', {
                     errorList
                 });

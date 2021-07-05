@@ -1,14 +1,10 @@
 // import des variables d'environnements
 require('dotenv').config();
 
-// Les cookies avec cookie-parser
-// const cookieParser = require('cookie-parser');
-
 // Les session avec express-session
 const session = require('express-session');
 
 const express = require('express');
-
 
 // Initialisation du port d'écoute
 const PORT = process.env.PORT || 8080;
